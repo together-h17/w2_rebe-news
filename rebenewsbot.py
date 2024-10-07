@@ -8,8 +8,7 @@ Created on Wed May 15 01:10:17 2024
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, TextSendMessage
-line_bot_api = LineBotApi('4Y4BbQB4qWWypxMmFuB1DffDDBboZKflRNJcPBv736vpzvvELBwpuXC++TKHt32kb0/Thqm0BB1NW7+Ji9Uj1/nREdsiclSb9l2ICcMizV7yDxK6mbA7K1g0pwcHi4iltbChbPucjSKo7NHDFcxOcwdB04t89/1O/w1cDnyilFU=')
-
+line_bot_api = LineBotApi('bot api')
 import requests
 from bs4 import BeautifulSoup
 # import csv
@@ -52,10 +51,10 @@ for i in range(0, len(item)-1):
         print(short_href)
         print("\n")
 
-        line_bot_api.push_message('U0e7ffc0c122ddcdaf23631ed78383581', TextSendMessage(text=message))
+        line_bot_api.push_message('要發送給的user id', TextSendMessage(text=message))
 
 if(news == False):
     print("今日無消息，一切安好")
-    line_bot_api.push_message('U0e7ffc0c122ddcdaf23631ed78383581', TextSendMessage(text="今日無消息，一切安好"))
+    line_bot_api.push_message('要發送給的user id', TextSendMessage(text="今日無消息，一切安好"))
 
 
